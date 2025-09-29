@@ -18,13 +18,13 @@
     <body>
         <h1>Selamat datang di {{ config('app.name') }}</h1>
         <p>Ini halaman utama aplikasi.</p>
-        <ul>
+        <!-- <ul>
             <li><a href="{{ route('about') }}">About</a></li>
             <li><a href="{{ route('contact') }}">Contact</a></li>
             <li><a href="{{ route('users', ['id' => 11]) }}">User 11</a></li>
             <li><a href="{{ route('edit') }}">Manage Edit</a></li>
             <li><a href="{{ route('barang') }}">Manage Barang</a></li>
-        </ul>
+        </ul> -->
         
     </body>
 </html>
