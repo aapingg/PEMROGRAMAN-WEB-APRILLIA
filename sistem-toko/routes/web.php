@@ -71,6 +71,9 @@ Route::middleware(['auth', 'RoleCheck:admin,owner'])->group(function () {
     Route::get('/produk/{angka}', [ProductController::class, 'index']);
 });
 
+// Route::get('/uts', function () {
+//     return view('uts.index');
+// });
 Route::get('/uts', [UtsController::class, 'index'])->name('uts.index');
 Route::get('/uts/web', [UtsController::class, 'web'])->name('uts.web');
 Route::get('/uts/database', [UtsController::class, 'database'])->name('uts.database');
