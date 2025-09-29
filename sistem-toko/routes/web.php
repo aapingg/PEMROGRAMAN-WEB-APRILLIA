@@ -70,7 +70,7 @@ Route::middleware(['auth', 'RoleCheck:admin,owner'])->group(function () {
     Route::get('/produk/{angka}', [ProductController::class, 'index']);
 });
 
-route::get('/uts/', function () {
+route::get('/uts', function () {
     return view('uts');
 });
 
