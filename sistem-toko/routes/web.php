@@ -19,26 +19,26 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/about', function(){
-    return ("Ini halaman about")
-})->name: 'about';
+// Route::get('/about', function(){
+//     return ("Ini halaman about")
+// })->name(name:'about');
 
-Route::get('/contact', function(){
-    return ("Ini halaman kontak")
-})->name(name: 'contact');
+// Route::get('/contact', function(){
+//     return ("Ini halaman kontak")
+// })->name(name: 'contact');
 
-Route::get('/users/{id}', function($id){
-    return ("Nilai id users adalah " . $id);
-})->name(name: 'users');
+// Route::get('/users/{id}', function($id){
+//     return ("Nilai id users adalah " . $id);
+// })->name(name: 'users');
 
-route::prefix('manage')->group(function(){
-    route::('/edit', function(){
-        return "Ini adalah halaman manage edit";
-    })->name(name:'barang');
-    route::('/barang', function(){
-        return "Ini adalah halaman manage barang";
-    })->name(name:'barang');
-});
+// route::prefix('manage')->group(function(){
+//     route::('/edit', function(){
+//         return "Ini adalah halaman manage edit";
+//     })->name(name:'barang');
+//     route::('/barang', function(){
+//         return "Ini adalah halaman manage barang";
+//     })->name(name:'barang');
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -68,6 +68,10 @@ route::get('/home', function () {
 
 Route::middleware(['auth', 'RoleCheck:admin,owner'])->group(function () {
     Route::get('/produk/{angka}', [ProductController::class, 'index']);
+});
+
+route::get('/uts/', function () {
+    return view('uts');
 });
 
 require __DIR__.'/auth.php';
