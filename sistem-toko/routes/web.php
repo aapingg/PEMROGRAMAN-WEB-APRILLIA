@@ -4,6 +4,11 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UtsController;
+use App\Http\Controllers\ProdukController;
+
+
+Route::get('/produk/{angka}', [ProdukController::class, 'index']);
+
 
 /*
 |--------------------------------------------------------------------------
@@ -67,9 +72,9 @@ route::get('/home', function () {
     return view('home');
 });
 
-Route::middleware(['auth', 'RoleCheck:admin,owner'])->group(function () {
-    Route::get('/produk/{angka}', [ProductController::class, 'index']);
-});
+// Route::middleware(['auth', 'RoleCheck:admin,owner'])->group(function () {
+//     Route::get('/produk/{angka}', [ProductController::class, 'index']);
+// });
 
 // Route::get('/uts', function () {
 //     return view('uts.index');
@@ -77,5 +82,7 @@ Route::middleware(['auth', 'RoleCheck:admin,owner'])->group(function () {
 Route::get('/uts', [UtsController::class, 'index'])->name('uts.index');
 Route::get('/uts/web', [UtsController::class, 'web'])->name('uts.web');
 Route::get('/uts/database', [UtsController::class, 'database'])->name('uts.database');
+
+
 
 require __DIR__.'/auth.php';
