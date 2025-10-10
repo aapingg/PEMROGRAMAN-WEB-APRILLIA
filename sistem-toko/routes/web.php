@@ -83,6 +83,8 @@ Route::get('/uts', [UtsController::class, 'index'])->name('uts.index');
 Route::get('/uts/web', [UtsController::class, 'web'])->name('uts.web');
 Route::get('/uts/database', [UtsController::class, 'database'])->name('uts.database');
 
+Route::get('/product/create', [ProductController::class, 'create'])->name('product-create');
+Route::post('/product',[ProductController::class, 'store'])->name('product-store');
 
 
 require __DIR__.'/auth.php';
