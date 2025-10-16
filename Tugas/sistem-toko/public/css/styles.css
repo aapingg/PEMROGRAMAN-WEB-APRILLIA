@@ -1,0 +1,58 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Styling body */
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Judul menu (bagian @yield('judul_menu')) */
+h1, h2, h3 {
+    text-align: center;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+/* Navigasi */
+nav {
+    background-color: #3498db;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Link navigasi */
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 15px;
+    padding: 8px 15px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+/* Efek hover link */
+nav a:hover {
+    background-color: #2980b9;
+    border-radius: 4px;
+}
+
+/* Konten isi menu */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
