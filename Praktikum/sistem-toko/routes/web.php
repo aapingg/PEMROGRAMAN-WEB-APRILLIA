@@ -60,7 +60,7 @@ Route::get('/rahasia', function () {
     return 'ini halaman rahasia';
 })->middleware('auth', 'RoleCheck:admin');
 
-Route::get('/produk', [ProductController::class, 'index']);
+//Route::get('/produk', [ProductController::class, 'index']);
 
 Route::get('/route_count/{id}', [ProductController::class, 'show']);
 
@@ -86,5 +86,10 @@ Route::get('/uts/database', [UtsController::class, 'database'])->name('uts.datab
 Route::get('/product/create', [ProductController::class, 'create'])->name('product-create');
 Route::post('/product',[ProductController::class, 'store'])->name('product-store');
 
+Route::get('/product',[ProductController::class, 'index'])->name('produk-index');
+
+Route::get('/product/{id}/edit',[ProductController::class, 'edit'])->name('product-edit');
+Route::put('/product/{id}',[ProductController::class, 'update'])->name('product-update');
+Route::delete('/product/{id}', [ProductController::class, 'destroy'])->name('product-destroy');
 
 require __DIR__.'/auth.php';
