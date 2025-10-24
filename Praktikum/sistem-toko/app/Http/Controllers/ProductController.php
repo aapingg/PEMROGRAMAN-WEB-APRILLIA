@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -73,30 +74,30 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
-    {
-        $validasi = $request->validate([
-            'product_name' => 'required|string|max:255',
-            'unit' => 'required|string|max:50',
-            'type' => 'required|string|max:50',
-            'information' => 'nullable|string',
-            'qty' => 'required|integer',
-            'producer' => 'required|string|max:255',
-        ]);
+    // public function update(Request $request, string $id)
+    // {
+    //     $validasi = $request->validate([
+    //         'product_name' => 'required|string|max:255',
+    //         'unit' => 'required|string|max:50',
+    //         'type' => 'required|string|max:50',
+    //         'information' => 'nullable|string',
+    //         'qty' => 'required|integer',
+    //         'producer' => 'required|string|max:255',
+    //     ]);
 
-        $product = Product::findOrFail($id);
-        $product->update([
-            'product_name' => $request->product_name,
-            'unit' => $request->unit,
-            'type' => $request->type,
-            'information' => $request->information,
-            'qty' => $request->qty,
-            'producer' => $request->producer
-        ]
-        );
+    //     $product = Product::findOrFail($id);
+    //     $product->update([
+    //         'product_name' => $request->product_name,
+    //         'unit' => $request->unit,
+    //         'type' => $request->type,
+    //         'information' => $request->information,
+    //         'qty' => $request->qty,
+    //         'producer' => $request->producer
+    //     ]
+    //     );
 
-        return redirect()->back()->with('success', 'data berhasil diperbarui');
-    }
+    //     return redirect()->back()->with('success', 'data berhasil diperbarui');
+    // }
 
     /**
      * Remove the specified resource from storage.
@@ -136,4 +137,18 @@ class ProductController extends Controller
 
         return redirect()->back()->with('success', 'data berhasil diperbarui');
     }
+    // public function destroy( string $id)
+    // {
+    //     $data = Product::findOrFail($id);
+    //     $data->delete();
+
+    //     return redirect()->back()->with('success', 'Data berhasil dihapus');
+    // }
+
+    public function destroy($id)
+    {
+        DB::table('product')->where('id', $id)->delete();
+        return redirect()->back()->with('success', 'Data berhasil dihapus');
+    }
+    
 }

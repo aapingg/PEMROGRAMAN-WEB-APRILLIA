@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+ 
+//fungsinya adalah menimpa aturan primary key
+//prtotected $primaryKey = 'id_produk';
+
     use HasFactory;
     protected $table = 'product';
     protected $fillable = [
