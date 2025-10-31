@@ -5,17 +5,23 @@ index-product.blade.php:
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800">
             {{ __('Dashboard') }}
-        </h2>fd aa
+        </h2>Aping Store
     </x-slot>
 
 
 
-    <div class="container p-4 mx-auto">f
+    <div class="container p-4 mx-auto">Produk aping
         <div class="overflow-x-auto">
             <a href="{{ route('product-create')}}">
                 <button
-                    class="px-6 py-4 text-white bg-green-500 border border-green-500 rounded-lg shadow-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    class="px-6 py-4 text-black bg-green-500 border border-green-500 rounded-lg shadow-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500">
                     Add product data
+                </button>
+            </a>
+            <a href="{{ route('product-export-excel')}}">
+                <button
+                    class="px-6 py-4 text-black bg-green-500 border border-green-500 rounded-lg shadow-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    Export Excel
                 </button>
             </a>
             <table class="min-w-full border border-collapse border-gray-200">
